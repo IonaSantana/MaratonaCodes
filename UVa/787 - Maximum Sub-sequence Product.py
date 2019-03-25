@@ -8,9 +8,8 @@ while True:
 			if l == -999999:
 				maior = prod = num[0]
 				for i in range(k):
-					prod = num[i]
-					maior = max(maior,prod)	
-					for  j in range(i+1, k):			 
+					prod = 1
+					for  j in range(i, k):			 
 						prod *= num[j]
 						maior = max(maior,prod)	
 						if prod == 0: break										
