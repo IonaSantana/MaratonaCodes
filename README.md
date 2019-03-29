@@ -1,2 +1,2 @@
 # MaratonaCodes
-Soluções problemas de Maratona
+Soluções - problemas de Maratona
