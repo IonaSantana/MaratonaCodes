@@ -30,38 +30,30 @@ int main()
 				cont+= it1->second;
 				aux = it1;
 				it1++;
-				s1.erase(aux);	
-				//printf("oi\n");			
+				s1.erase(aux);				
 			}else
 			{
-				//printf("oii\n");
 				cont+= abs(it1->second - s2[it1->first]);
 				aux = it1;
 				it1++;
-				//puts("deu ruim");
 				s1.erase(aux);
 				s2.erase(aux->first);
 			}
-			//puts("SAI");
 		}
 		it2 = s2.begin();
 		while( it2 != s2.end())
 		{
 			if (s1.find(it2->first) == s1.end())
 			{
-				//printf("oiii\n");
 				cont+= it2->second;
 				aux = it2;
 				it2++;
 				s2.erase(aux);				
 			}else
 			{
-				//printf("oiiii\n");
 				it2++;
 			}
 		}	
 		printf("%d\n",cont);
-	}
-	
-	
+	}	
 }
