@@ -17,7 +17,6 @@ int main()
 			if((linha[i] < 65 || (linha[i] > 90 && linha[i] < 97) || linha[i] > 122) && linha[i]!= '-')
 			{
 				m.insert(palavra);
-				//~ cout<<palavra<<endl;
 				palavra = "";
 			}else if(linha[i] < 97 && linha[i] != '-')
 			{
@@ -30,19 +29,16 @@ int main()
 		if(linha[s-1] >= 97 && linha[s-1] <= 122)
 		{
 			palavra += linha[s-1];
-			//~ cout<<palavra<<endl;
 			m.insert(palavra);
 			palavra = "";
 			
 		}else if(linha[s-1] >= 65 && linha[s-1] <= 90)
 		{
 			palavra += (linha[s-1] + 32);
-			//~ cout<<palavra<<endl;
 			m.insert(palavra);
 			palavra = "";
 		}else if(linha[s-1] != '-')
 		{
-			//~ cout<<palavra<<endl;
 			m.insert(palavra);
 			palavra = "";
 		}
