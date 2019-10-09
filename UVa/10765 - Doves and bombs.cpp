@@ -17,9 +17,9 @@ int dfsNumberCounter, dfsRoot, rootChildren;
 bool ordena(ii a, ii b)
 {
 	if(a.second > b.second)
-		return 1;
+	   return 1;
 	if(a.second == b.second && b.first > a.first)
-		return 1;
+	   return 1;
 	return 0;	
 }
 void articulationPointAndBridge(int u) 
@@ -32,7 +32,7 @@ void articulationPointAndBridge(int u)
     {
       dfs_parent[v.first] = u;
       if(u == dfsRoot)
-	    	rootChildren++;
+	rootChildren++;
 
       articulationPointAndBridge(v.first);
 
@@ -45,7 +45,7 @@ void articulationPointAndBridge(int u)
       dfs_low[u] = min(dfs_low[u], dfs_low[v.first]);
       
     } else if(v.first != dfs_parent[u])
-		dfs_low[u] = min(dfs_low[u], dfs_num[v.first]);
+	dfs_low[u] = min(dfs_low[u], dfs_num[v.first]);
   }
 }
 
@@ -58,7 +58,7 @@ int main() {
 	  int a, b;
 	  while(scanf("%d %d", &a, &b), a!=-1 || b!=-1)
 	  {
-		  G[a].push_back(ii(b, 1));
+		G[a].push_back(ii(b, 1));
 	  	G[b].push_back(ii(a, 1));
 	  }
 
@@ -69,30 +69,30 @@ int main() {
 	  articulation_vertex.assign(v, 0);
 	  for(int i=0; i < v; i++) 
 	  {
-      if(dfs_num[i] == DFS_WHITE) 
-      {
-        dfsRoot = i;
-        rootChildren = 0;
-        articulationPointAndBridge(i);
-        articulation_vertex[dfsRoot] = (rootChildren > 1);
-      }
+	      if(dfs_num[i] == DFS_WHITE) 
+	      {
+		dfsRoot = i;
+		rootChildren = 0;
+		articulationPointAndBridge(i);
+		articulation_vertex[dfsRoot] = (rootChildren > 1);
+	      }
 	  }    
 
 	  for(int i=0; i<v; i++) 
 	  {
-      if(articulation_vertex[i])
-      {
-        vet.push_back(ii(i,vertices[i]+1));
+	      if(articulation_vertex[i])
+	      {
+		vet.push_back(ii(i,vertices[i]+1));
 
-      }else
-      {
-        vet.push_back(ii(i,1));
-      }
+	      }else
+	      {
+		vet.push_back(ii(i,1));
+	      }
 	  }
 	  sort(vet.begin(),vet.end(),ordena);
 	  for (int i = 0; i < e; i++)
 	  {
-		  printf("%d %d\n",vet[i].first,vet[i].second);
+	      printf("%d %d\n",vet[i].first,vet[i].second);
 	  }
 	  puts("");
 	  vertices.clear();
