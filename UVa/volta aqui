@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+	freopen("in","r",stdin);
+	freopen("out","w",stdout);
+	long long n,m,dif,resp,i;
+	
+	while (scanf("%lld%lld",&n,&m)!=EOF)
+	{
+		dif = n-m + 1;
+		resp = dif;
+		for (i = dif+1; i <= n; i++)
+		{
+			resp *= i;
+			while (resp%10 == 0)
+			{
+				resp/=10;
+			}
+			resp = resp%10;
+		}
+		printf("%lld\n",resp%10);
+	}
+}
